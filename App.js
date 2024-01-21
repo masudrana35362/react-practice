@@ -17,41 +17,52 @@ import {
   View,
 } from 'react-native';
 
+import UserData from './components/UserData';
+
 
 const App = () => {
 
   const users = [
     {
       id: 1,
-      name: "Masud"
+      name: "Masud",
+      email: "example@gmail.com"
     },
     {
       id: 2,
-      name: "Rana"
+      name: "Rana",
+      email: "example@gmail.com"
     },
     {
       id: 3,
-      name: "Milon"
+      name: "Milon",
+      email: "example@gmail.com"
     },
     {
       id: 4,
-      name: "Sajib"
+      name: "Sajib",
+      email: "example@gmail.com"
+
     },
     {
       id: 5,
-      name: "Masud"
+      name: "Masud",
+      email: "example@gmail.com"
     },
     {
       id: 6,
-      name: "Rana"
+      name: "Rana",
+      email: "example@gmail.com"
     },
     {
       id: 7,
-      name: "Milon"
+      name: "Milon",
+      email: "example@gmail.com"
     },
     {
       id: 8,
-      name: "Sajib"
+      name: "Sajib",
+      email: "example@gmail.com"
     },
   ]
 
@@ -59,38 +70,14 @@ const App = () => {
     <View>
       <Text style={{ fontSize: 24 }} >Name List showing here </Text>
 
-      {/* <FlatList
+      <FlatList style={{ marginBottom: 50 }}
         data={users}
-        renderItem={({ item }) => <Text style={styles.textStyle} >{item.name}</Text>}
+        renderItem={({ item }) => <UserData item={item}/>}
         keyExtractor={item => item.id}
-      /> */}
-      <ScrollView style={{marginBottom:50}}>
-        {
-          users.map((item) => <Text style={styles.textStyle} >{item.name}</Text>)
-        }
-      </ScrollView>
-
-
-
+      />
     </View>
 
   );
 };
-
-const styles = StyleSheet.create({
-  textStyle: {
-    height: 100,
-    color: '#fff',
-    fontSize: 22,
-    backgroundColor: 'green',
-    marginTop: 10,
-    marginHorizontal: 10,
-    padding: 5,
-    borderRadius: 5
-
-  }
-})
-
-
 
 export default App;
