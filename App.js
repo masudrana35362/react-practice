@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import {
   Button,
   Modal,
+  Pressable,
   StyleSheet,
   Text,
   View,
@@ -16,60 +17,31 @@ import {
 
 const App = () => {
 
-  const [showModal,setShowModal] = useState(false)
 
   return (
-    <View style={styles.main}>
-
-      <Modal
-       transparent={true} 
-      visible={showModal}
-      animationType='fade'
-
-      >
-
-        <View style={styles.centerView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}> this is modal</Text>
-            <Button title='Cloase Modal' onPress={()=> setShowModal(false)}/>
-          </View>
-        </View>
-
-
-      </Modal>
-
-      <View style={styles.buttonView}>
-        <Button title='Open Modal' onPress={()=>setShowModal(true)} />
-      </View>
+    <View style= {styles.main}>
+      <Pressable style={styles.pressAble}>
+        <Text> Update Button</Text>
+      </Pressable>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+
   main: {
-    flex: 1
-  },
-  buttonView: {
-    flex: 1,
-    justifyContent: 'flex-end'
-  },
-  centerView: {
     flex:1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'center'
   },
-  modalView: {
-    backgroundColor: 'white',
-    padding:40,
-    borderRadius:20,
-    shadowColor: 'black',
-    elevation: 5,
-  },
-  modalText:{
-    marginBottom: 10,
-    fontSize:20
+  pressAble:{
+    backgroundColor: 'blue',
+    padding:10,
+    margin: 10,
+    color: '#fff',
+    borderRadius: 10,
+    fontSize: 20,
+    textAlign: 'center'
   }
 
 })
-
 export default App;
